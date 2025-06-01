@@ -21,8 +21,10 @@ read -p "Enter special character to try (e.g., ! or leave blank): " SPECIAL
 read -p "Enter user file (e.g., users.txt): " USERFILE
 read -p "Enter target IP or hostname: " TARGET
 read -p "Enter protocol (e.g., smb2, ssh): " PROTOCOL
-read -p "Enter domain name (e.g., hiboxy): " DOMAIN_NAME
-DOMAIN="workgroup:{$DOMAIN_NAME}"
+read -p "Enter module prefix (e.g., workgroup, domain): " MODULE_PREFIX
+read -p "Enter domain or group name : " DOMAIN_NAME
+DOMAIN="${MODULE_PREFIX}:{${DOMAIN_NAME}}"
+
 
 read -p "Enter sleep time between attempts (in minutes): " SLEEP_MINUTES
 SLEEP_SECONDS=$((SLEEP_MINUTES * 60))
